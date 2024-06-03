@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Landing Page</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('App Landing Page.png');
+        background-size: cover;
+    }
+
+    nav {
+        color: black;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    .logo-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 20px;
+    }
+
+    .nav-left ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .nav-left ul li {
+        margin-left: 20px;
+    }
+
+    .nav-left ul li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .nav-left ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .nav-right .btn {
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .nav-right .btn:hover {
+        background-color: #333;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 30px 20px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .welcome-text {
+        max-width: 50%;
+        padding-right: 20px;
+    }
+
+    .welcome-text h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .button-container img {
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .additional-image {
+        width: 100%;
+        max-width: 400px; /* Increased max-width */
+        margin-top: 20px;
+    }
+
+    .phone-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        max-width: 50%;
+        position: relative;
+    }
+
+    .phone-image {
+        width: 70%;
+        max-width: 600px;
+        margin-right: 40px;
+        z-index: 1;
+    }
+
+    .curvy-shape {
+        position: absolute;
+        width: 70%;
+        max-width: 500px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+
+    .features-section {
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    .features-image {
+        width: 40%;
+        max-width: 400px;
+        margin-right: 20px;
+    }
+
+    .features-text {
+        max-width: 50%;
+        padding-left: 20px;
+        padding-right: 20%; /* Increased padding-right for more space */
+        padding-bottom: 70px;
+        text-align: center;
+    }
+
+    .features-text h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: orange;
+        font-weight: lighter;
+    }
+
+    .features-text h1 {
+        font-size: 2.5em;
+        font-weight: bolder;
+    }
+
+    .features-text ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .features-text ul li {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        list-style: none;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-left ul {
+            flex-direction: column;
+            align-items: flex-start;
+            display: none;
+            width: 100%;
+        }
+
+        .nav-left ul.show {
+            display: flex;
+        }
+
+        .nav-left ul li {
+            margin: 10px 0;
+        }
+
+        .nav-right {
+            align-self: flex-end;
+            margin-top: 10px;
+        }
+
+        section, .features-section {
+            padding: 20px 20px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .welcome-text, .features-text {
+            max-width: 100%;
+            margin-bottom: 30px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .welcome-text h1 {
+            font-size: 2em; /* Adjusted for smaller screens */
+        }
+
+        .phone-images, .features-image {
+            margin-top: 20px;
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        .phone-image, .features-image {
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .curvy-shape {
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .additional-image {
+            margin-top: 10px;
+            width: 70%;
+            max-width: 400px; /* Increased max-width for smaller screens */
+        }
+
+        .button-container img {
+            width: 120px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo-name {
+            font-size: 20px;
+        }
+
+        .nav-left ul li {
+            margin-left: 0;
+        }
+
+        .nav-left ul li a {
+            font-size: 16px;
+        }
+
+        .nav-right .btn {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+
+        section, .features-section {
+            padding: 20px 20px;
+        }
+
+        .welcome-text h1, .features-text h2 {
+            font-size: 2em;
+        }
+
+        .phone-image, .features-image {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .curvy-shape {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .additional-image {
+            width: 80%;
+            max-width: 400px; /* Increased max-width for smaller screens */
+        }
+
+        .button-container img {
+            width: 100px;
+        }
+    }
+
+    .h1 {
+        font-weight: bolder;
+    }
+
+    .ohome {
+        color: orangered;
+    }
+
+    .phone-image, .additional-image, .button-container img, .features-image {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+    }
+</style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-left">
+                <img src="fire.jpg" alt="Logo" class="logo">
+                <span class="logo-name">uifry&trade;</span>
+                <ul>
+                    <li><a href="#home"><span class="ohome">Home</span></a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="#download" class="btn">Download</a>
+            </div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="welcome-text">
+            <h1>Make The Best <br> Financial Decisions</h1>
+            <p>Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu LoremPorttitor</p>
+            <div class="button-container">
+                <a href="#"><img src="Group 2.png" alt="get started"></a>
+                <a href="#"><img src="Group 4.png" alt="
+
+video"></a>
+            </div>
+            <img src="Group 35923.png" alt="" class="additional-image">
+        </div>
+        <div class="phone-images">
+            <svg class="curvy-shape" viewBox="0 0 500 500">
+                <path d="M50,150 C150,0 350,0 450,150 C550,300 350,450 150,350 C50,300 -50,300 50,150 Z" stroke="black" fill="none"/>
+                <path d="M50,200 C150,50 350,50 450,200 C550,350 350,500 150,400 C50,350 -50,350 50,200 Z" stroke="black" fill="none"/>
+            </svg>
+            <img src="phonestack-removebg-preview.png" alt="iPhone Image" class="phone-image">
+        </div>
+    </section>
+    <section id="features" class="features-section">
+        <img src="Group 35933 (1).png" alt="Features Image" class="features-image">
+        <div class="features-text">
+            <h2>Features</h2>
+            <h1>Uifry Premium</h1>
+            <ul>
+                <li><b>Budgeting Intervals:</b> <br> Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor</li>
+                <li><b>Budgeting Intervals:</b> <br> Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor</li>
+                <li><b>Budgeting Intervals:</b> <br> Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor</li>
+                <li><b>Budgeting Intervals:</b> <br> Cum Et Convallis Risus Placerat Aliquam, Nunc. Scelerisque Aliquet Faucibus Tincidunt Eu Adipiscing Sociis Arcu Lorem Porttitor</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            var navUl = document.querySelector('.nav-left ul');
+            navUl.classList.toggle('show');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', function() {
+            var images = document.querySelectorAll('.phone-image, .additional-image, .features-image');
+            images.forEach(image => {
+                fadeIn(image);
+            });
+
+            var buttons = document.querySelectorAll('.button-container img');
+            buttons.forEach(button => {
+                fadeIn(button);
+            });
+
+            function fadeIn(element) {
+                var opacity = 0;
+                var intervalID = setInterval(function() {
+                    if (opacity < 1) {
+                        opacity += 0.05;
+                        element.style.opacity = opacity;
+                    } else {
+                        clearInterval(intervalID);
+                    }
+                }, 20);
+            }
+        });
+    </script>
+</body>
+</html>
